@@ -24,3 +24,7 @@ Make a local director like /var/haskell/sourceode
 
 If necessary use bindfs if you don't want to write everything as root. An fstab entry like:
 /home/mark/haskellcode /var/sourcecode/haskell fuse.bindfs create-for-user=mark,create-for-group=mark 0 0
+
+N.B.
+The complex RUN scripts, include "source /etc/profile"  because I actually use a slightly longer base Dockerfile at work that copies proxy config to the container's profile.
+If I don't include this, then environment variables, like HTTP_PROXY don't get included and cabal and apt-get fail to resolve their packages.
