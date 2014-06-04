@@ -1,3 +1,0 @@
-#/bin/bash
-docker run -i -t --rm=true -v /var/sourcecode/haskell:/src:rw haskelldev /bin/bash -c "source /etc/profile && exec >/dev/tty 2>/dev/tty </dev/tty && screen -s /bin/bash" && reset
-
