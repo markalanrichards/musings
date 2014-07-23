@@ -1,0 +1,4 @@
+#!/bin/bash
+STARTUP="startup.sh"
+SCRIPT=$1$STARTUP
+docker run -i -t --rm=true -v /root/mark/src:/marksrc:rw $@ /bin/bash -c "source /etc/profile && /startup.sh /$SCRIPT && exec >/dev/tty 2>/dev/tty </dev/tty && /usr/bin/screen -s /bin/bash" && reset
